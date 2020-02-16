@@ -3,6 +3,7 @@ package pl.natalia.gifs.repository;
 import org.springframework.stereotype.Repository;
 import pl.natalia.gifs.model.Gif;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -64,5 +65,15 @@ public class GifRepository {
 
         return null;
     }
+
+    List<Gif> gifs = new ArrayList<>();
+    public List<Gif> getGifsByCategoryId(int id){
+        for (Gif g: ALL_GIF) {
+            if(g.getCategoryId() == id){
+                gifs.add(g);
+            }
+        }
+        return gifs;
+        }
 
 }

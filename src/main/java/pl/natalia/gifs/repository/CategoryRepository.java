@@ -1,7 +1,9 @@
 package pl.natalia.gifs.repository;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 import pl.natalia.gifs.model.Category;
+import pl.natalia.gifs.model.Gif;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,6 +21,18 @@ public class CategoryRepository {
     public List<Category> getAllCategories(){
         return ALL_CATEGORIES;
     }
+
+    public Category getCategoryById(int id){
+        for (Category c : ALL_CATEGORIES)
+            if(c.getId() == (id)){
+            return c;
+        }
+
+        return null;
+    }
+
+
+
 
 
 }
