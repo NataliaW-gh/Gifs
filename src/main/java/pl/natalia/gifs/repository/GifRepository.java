@@ -38,7 +38,20 @@ public class GifRepository {
         return ALL_GIF.stream()
                 .filter(Gif::getFavorite)
                 .collect(Collectors.toList());
-        
+
+    // 2 sposób
+    /*
+    List<Gif> favorites = new ArrayList<>();
+    for(Gif allGif:ALL_GIFS)
+
+    {
+        if (allGif.getFavorite()) {
+            favorites.add(allGif);
+        }
+    }
+    return favorites;
+    */
+
     }
 
 
