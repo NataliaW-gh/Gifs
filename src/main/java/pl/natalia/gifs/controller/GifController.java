@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.natalia.gifs.model.Gif;
 import pl.natalia.gifs.repository.GifRepository;
@@ -54,5 +55,17 @@ public class GifController {
 
     }
 
+    @GetMapping("gif/{name}") // w wasach bo zmienna z @PathVariable
+    public  String getGifByName(@PathVariable String name, ModelMap modelMap){
+        //1.wyciagniecie wartosci
+        Gif g = gifRepository.getGifByName(name);
+
+        //2.przekazanie do view
+        modelMap.put("gif", g);
+
+        //3.zwrocenie widoku
+        return "gif-details";
+
+    }
 
 }

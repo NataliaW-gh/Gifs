@@ -54,5 +54,15 @@ public class GifRepository {
 
     }
 
+    public Gif getGifByName(String name){
+
+        for (Gif g : ALL_GIF){
+            if(g.getName().equals(name)){
+                return g;
+            }
+        }
+
+        return null;
+    }
 
 }
