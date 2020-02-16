@@ -22,6 +22,7 @@ public class CategoryController {
         this.categoryRepository = categoryRepository;
     }
 
+    //inny sposob na to samo co wyzej 
     @Autowired
     GifRepository gifRepository;
 
